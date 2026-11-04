@@ -142,3 +142,10 @@ canvas { display: block; position: fixed; inset: 0; }
 @media (prefers-reduced-motion: reduce) {
   .comic .beat { will-change: auto; }
 }
+
+/* lab: four notes in a 2x2 block so the spread fits above the fold */
+[data-beat="lab"] .notes { display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px; }
+[data-beat="lab"] .note { padding: 8px 0 7px; }
+[data-beat="lab"] .note-body { font-size: 10px; line-height: 1.3; }
+[data-beat="lab"] .note-line { font-size: 10.5px; }
+@media (max-width: 860px) { [data-beat="lab"] .notes { grid-template-columns: 1fr; } }

@@ -3,7 +3,7 @@ const b = await puppeteer.launch({ executablePath: '/usr/bin/brave', headless: t
 const p = await b.newPage()
 p.on('pageerror', e => console.log('ERR', e.message))
 for (const [name, y] of [['live-projects', 4920], ['live-lab', 6800], ['live-contact', 8440]]) {
-  await p.goto('https://harshgounder.github.io/portfolio/', { waitUntil: 'networkidle2' })
+  await p.goto('https://harshgounder.github.io/portfolio/?v=3', { waitUntil: 'networkidle2' })
   await p.evaluate(y => scrollTo(0, y), y)
   await new Promise(r => setTimeout(r, 2500))
   await p.screenshot({ path: `shots/${name}.png` })
