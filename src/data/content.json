@@ -90,7 +90,7 @@
         "name": "LUNAR-TIE",
         "context": "SIH 2026 / SIH26166 / ISRO",
         "year": "2026",
-        "line": "Image correspondence for Chandrayaan-2, where the sun angle, the scale and the sensor all change and the match still has to hold.",
+        "line": "Chandrayaan-2 image correspondence across sun angle, scale and sensor.",
         "stack": "Python, OpenCV, pytest",
         "proof": "154 of 154 tests pass on the hardened build.",
         "repo": "https://github.com/harshgounder/lunar-tie",
@@ -104,7 +104,7 @@
         "name": "Kavach",
         "context": "IIC 3.0 / Cyber security / Team 511",
         "year": "2026",
-        "line": "A Hindi-first shield against digital-arrest and voice scams. It hears the script and the synthetic voice, then stops the payment.",
+        "line": "Hindi-first defence against digital-arrest and voice scams.",
         "stack": "Python, PyTorch, AASIST",
         "proof": "0.9919 held-out spoof accuracy and 0 false positives on 100 real calls.",
         "repo": "https://github.com/harshgounder/kavach",
@@ -118,7 +118,7 @@
         "name": "RAASTA",
         "context": "HYPNEXIS 2026 / SC-02 / Team RISC",
         "year": "2026",
-        "line": "Turns any Indian street photo into a per-body accessibility verdict and a route that avoids what actually stops you.",
+        "line": "Per-body accessibility verdicts and routes from one street photo.",
         "stack": "JavaScript, computer vision",
         "proof": "Shortest route meets 33 barriers. The RAASTA route meets 0.",
         "repo": "https://github.com/harshgounder/raasta",
@@ -132,7 +132,7 @@
         "name": "VAKYA",
         "context": "HYPNEXIS 2026 / Team RISC",
         "year": "2026",
-        "line": "A five-dollar device that hears Indian speech and performs a verified action, offline. The grammar is the instruction set.",
+        "line": "A five-dollar offline device where the grammar is the instruction set.",
         "stack": "Python, grammar-constrained decoding",
         "proof": "A garbled utterance can produce a valid action or a refusal, never a wrong one.",
         "repo": "https://github.com/harshgounder/vakya",
@@ -146,7 +146,7 @@
         "name": "AI web arsenal",
         "context": "Attack surface inventory",
         "year": "2026",
-        "line": "A tool manifest and coverage instrument for web platforms, built to be driven by an agent and checked by a human.",
+        "line": "Tool manifest and coverage instrument for web platforms.",
         "stack": "Python, Markdown corpus",
         "proof": "64 verified tools, 28 authored domains, 39.7 percent of a 1,000-factor denominator.",
         "repo": "https://github.com/harshgounder/ai-web-arsenal",
@@ -160,7 +160,7 @@
         "name": "REA expansion atlas",
         "context": "Research / reverse engineering",
         "year": "2026",
-        "line": "A gap audit of REA, the agent-first reverse-engineering tool: the fork network, the derivative projects, and the papers.",
+        "line": "Fork network, derivatives and papers for the REA toolkit.",
         "stack": "Python, GitHub API, arXiv",
         "proof": "Every claim tagged verified or unverified, with TSVs to check it.",
         "repo": "https://github.com/harshgounder/rea-expansion",
@@ -203,26 +203,26 @@
       {
         "tag": "model id",
         "name": "ika",
-        "line": "A model with no name, fingerprinted from the outside.",
-        "body": "Ten hard trivia questions: ika scored 9. GPT-6.1 Sol scored 9 to 10, GPT-5.5 scored 9, gpt-oss scored 0, Inkling scored 0 to 2. Then rare words that gpt-oss garbles in 26 of 26 runs. ika copied 3 of 4, like GPT-5.5 and GPT-6. Its tokenizer mistakes match neither. Best guess: an unreleased OpenAI model. Not confirmed."
+        "line": "A model with no name, fingerprinted from outside.",
+        "body": "10 hard trivia questions: ika scored 9. GPT-6.1 Sol 9 to 10, GPT-5.5 9, gpt-oss 0, Inkling 0 to 2. Rare words gpt-oss garbles 26 of 26 times: ika copied 3 of 4. Tokenizer mistakes match neither. Guess: unreleased OpenAI model. Not confirmed."
       },
       {
         "tag": "objective",
         "name": "NCMS",
         "line": "Next-Concept Modeling, read down to the substep.",
-        "body": "Generate a hierarchy of discrete codes coarse to fine, all codes in a level in parallel. The published claim is 10 to 31 times faster than the strongest diffusion language models with 4 to 5 times fewer training tokens. Three weeks old when we picked it up. The open question is the ablation nobody published."
+        "body": "A hierarchy of discrete codes coarse to fine, all codes in a level in parallel. Published claim: 10 to 31x faster than diffusion LMs with 4 to 5x fewer tokens. Three weeks old when we picked it up. The ablation is the open slot."
       },
       {
         "tag": "precision",
         "name": "bonsai",
         "line": "Small ternary models, compressed until the table is the model.",
-        "body": "A frozen 16 MB vocabulary and a body compressed to ternary: 46 MB total, 615 to 740 tokens per second on a laptop CPU, 5 to 6 times faster than 8-bit GGUF at one seventh of the memory. Zeros run up to 51.5 percent of weights and the kernels ignore that."
+        "body": "Frozen 16 MB vocabulary, ternary body: 46 MB total, 615 to 740 tok/s on a laptop CPU, 5 to 6x faster than 8-bit GGUF at one seventh of the memory. Zeros are up to 51.5 percent of weights and the kernels ignore it."
       },
       {
         "tag": "optimizer",
         "name": "muon",
         "line": "Fewer tokens to the same loss. Not yet fewer seconds.",
-        "body": "Muon is the frontier default now, and the honest paired study says it wins every equal-data test while AdamW still wins language wall-clock, because the optimizer call is over half the step. NorMuon reports 21.7 percent fewer steps than AdamW at 1.1B. We are chasing the wall-clock gap, not the headline."
+        "body": "Frontier default now. Wins every equal-data test, AdamW still wins language wall-clock because the optimizer call is over half the step. NorMuon: 21.7 percent fewer steps than AdamW at 1.1B."
       }
     ]
   }
