@@ -36,7 +36,7 @@ items.forEach((p, i) => {
   <dl class="meta">
     <div><dt>stack</dt><dd>${esc(p.stack)}</dd></div>
     <div><dt>proof</dt><dd>${esc(p.proof)}</dd></div>
-    <div><dt>code</dt><dd><a href="${esc(p.repo)}">${esc(p.repo.replace('https://github.com/', ''))}</a></dd></div>
+    <div><dt>code</dt><dd>${p.repoPrivate ? 'private repository' : `<a href="${esc(p.repo)}">${esc(p.repo.replace('https://github.com/', ''))}</a>`}</dd></div>
     ${p.live ? `<div><dt>live</dt><dd><a href="${esc(p.live)}">${esc(p.live.replace('https://', ''))}</a></dd></div>` : ''}
   </dl>
   <section><h2>The problem</h2><p>${esc(p.problem)}</p></section>

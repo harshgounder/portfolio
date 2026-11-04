@@ -97,7 +97,8 @@
         "live": "",
         "problem": "Chandrayaan-2 gives you three instruments at three scales: OHRC at 0.25 m/px, TMC-2 with five bands, IIRS at 80 m/px with 256 bands. Match those against LRO NAC and Kaguya under sun angles from 60 to 180 degrees. ISRO's brief asks for sub-pixel accuracy, tie points spread across the whole image, and an inlier ratio. One good crater is not a result.",
         "built": "A Python pipeline in four stages: data ingest, matchers, geometry, eval. Every pair gets its own YAML config and every stage its own CLI entry point. Photometric normalisation runs before matching. The evaluator writes RMSE, inlier count and inlier ratio per stratum, so a result that only works on textured terrain fails the distribution check.",
-        "proofLong": "154 tests pass on the hardened M1 build, with a zero-Ch2-input guarantee for the fixtures: the suite never quietly depends on the data it is meant to process. Window 1 is the tree I own; window 2 is a separate build."
+        "proofLong": "154 tests pass on the hardened M1 build, with a zero-Ch2-input guarantee for the fixtures: the suite never quietly depends on the data it is meant to process. Window 1 is the tree I own; window 2 is a separate build.",
+        "repoPrivate": true
       },
       {
         "slug": "kavach",
@@ -111,7 +112,8 @@
         "live": "",
         "problem": "Digital-arrest scams cost 4,057.7 crore rupees across 2.97 lakh complaints from 2022 to May 2026. The money moves in the seconds between the call and the PIN. Every bank warns its customers. No consumer app defends the phone itself, in Hindi.",
         "built": "Six departments in one loop: spoof detection on AASIST-hindi with a three-window vote, coercion analysis over Hindi ASR and eight vector banks, threat and factcheck signals, a payment tripwire, and a tamper-evident packet for 1930 and Chakshu. The fusion ladder is deterministic: PASS, CAUTION, PAUSE, KILL. Spoof or high coercion holds the call. Both kill it.",
-        "proofLong": "Held-out Hindi spoof accuracy is 0.9919, 123 of 124, with the single miss disclosed. False positives on real Hindi calls: 0 of 100. Mean verdict latency is about 71 ms warm on a GTX 1650. Clipped, silent or invalid audio can never PASS."
+        "proofLong": "Held-out Hindi spoof accuracy is 0.9919, 123 of 124, with the single miss disclosed. False positives on real Hindi calls: 0 of 100. Mean verdict latency is about 71 ms warm on a GTX 1650. Clipped, silent or invalid audio can never PASS.",
+        "repoPrivate": false
       },
       {
         "slug": "raasta",
@@ -125,7 +127,8 @@
         "live": "https://harshgounder.github.io/raasta/",
         "problem": "A route planner that assumes one body is a route planner for nobody. A 150 mm kerb, a parked cart, a broken slab: the same street is passable for one person and closed for another. Most maps answer with distance and call it done.",
         "built": "A photo goes through twelve stages: two detectors, agreement, a footpath mask, depth, measurement, placement, impact, a vision model, a reasoner, a receipt. Seventy-four body profiles across seven categories change the cost of the same kerb. Each segment is known_barrier, known_clear with a date, osm_tag, or unknown. No recent image means unknown, never safe.",
-        "proofLong": "On the Chandigarh demo the shortest route is 622 m and meets 33 placed barriers. The RAASTA route is 1.04 km and meets none. A full scan runs in about 26 seconds on a 4 GB laptop GPU; the detectors alone take about 6."
+        "proofLong": "On the Chandigarh demo the shortest route is 622 m and meets 33 placed barriers. The RAASTA route is 1.04 km and meets none. A full scan runs in about 26 seconds on a 4 GB laptop GPU; the detectors alone take about 6.",
+        "repoPrivate": false
       },
       {
         "slug": "vakya",
@@ -139,7 +142,8 @@
         "live": "",
         "problem": "Voice agents fail at the first turn. 55 percent of 455 teams abandoned theirs, and open-vocabulary speech recognition errs by 50 percent or more on Indian field speech. The failure lives between what was heard and what was executed.",
         "built": "Move the constraint from the model to the decoder. A byte-level grammar compiled from the target's own schema constrains every decoded token, so the action is well-formed by construction in any script. The grammar also carries date formats, numeral systems, currency units and enum members, which makes it the localisation layer too.",
-        "proofLong": "A garbled utterance can produce a valid action or a refusal. Guardrail, audit trail and refusal stop being promises and become architecture. The target is a five-dollar device, offline, with no task-specific weights."
+        "proofLong": "A garbled utterance can produce a valid action or a refusal. Guardrail, audit trail and refusal stop being promises and become architecture. The target is a five-dollar device, offline, with no task-specific weights.",
+        "repoPrivate": false
       },
       {
         "slug": "ai-web-arsenal",
@@ -153,7 +157,8 @@
         "live": "",
         "problem": "Tool lists lie. A folder of 300 links says nothing about what you can actually run, what it covers, and what you have never touched. Coverage gets asserted instead of measured.",
         "built": "A manifest of 64 verified tools, 28 authored domains plus 9 pointers, and a 1,000-factor denominator across sixteen lenses. Every factor carries a coverage record. Every excluded entry carries a reason. A gate and a claims ledger keep the scoreboard honest.",
-        "proofLong": "Coverage is 39.7 percent of the denominator, against a measured ceiling of 95.0 percent, with 6 of 1,000 factors observed. The defects found in the project are listed in the repo, including the ones in its own scoring."
+        "proofLong": "Coverage is 39.7 percent of the denominator, against a measured ceiling of 95.0 percent, with 6 of 1,000 factors observed. The defects found in the project are listed in the repo, including the ones in its own scoring.",
+        "repoPrivate": false
       },
       {
         "slug": "rea-expansion",
@@ -167,7 +172,8 @@
         "live": "",
         "problem": "REA is an agent-first reverse-engineering tool with a fork network large enough that who is building on it is a real research question. The first pass found 66 forks and called it a landscape.",
         "built": "Six waves: understand the upstream from source, score the fork network, profile the competing agent-RE projects, harvest 688 specialised tools from 42 GitHub topics, read 292 papers out of a 1,084-paper harvest, then audit upstream drift. Every repo and paper ID cited by the research reports gets a live check in a TSV.",
-        "proofLong": "Claims carry a source and a verified or unverified tag. Subagent output is a claim until a review table says otherwise. The build phase waits for an explicit GO, which is the honest state of the work."
+        "proofLong": "Claims carry a source and a verified or unverified tag. Subagent output is a claim until a review table says otherwise. The build phase waits for an explicit GO, which is the honest state of the work.",
+        "repoPrivate": true
       }
     ]
   },
