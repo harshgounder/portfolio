@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kavach · Harsh Gounder</title>
+<meta name="description" content="A Hindi-first shield against digital-arrest and voice scams. It hears the script and the synthetic voice, then stops the payment.">
+<link rel="stylesheet" href="../src/look/case.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="back" href="../index.html">Harsh Gounder</a>
+  <span class="kind">case study</span>
+</header>
+<main id="main">
+  <p class="eyebrow">IIC 3.0 / Cyber security / Team 511 · 2026</p>
+  <h1>Kavach</h1>
+  <p class="line">A Hindi-first shield against digital-arrest and voice scams. It hears the script and the synthetic voice, then stops the payment.</p>
+  <div class="plate" aria-hidden="true"><span>02</span></div>
+  <dl class="meta">
+    <div><dt>stack</dt><dd>Python, PyTorch, AASIST</dd></div>
+    <div><dt>proof</dt><dd>0.9919 held-out spoof accuracy and 0 false positives on 100 real calls.</dd></div>
+    <div><dt>code</dt><dd><a href="https://github.com/harshgounder/kavach">harshgounder/kavach</a></dd></div>
+    
+  </dl>
+  <section><h2>The problem</h2><p>Digital-arrest scams cost 4,057.7 crore rupees across 2.97 lakh complaints from 2022 to May 2026. The money moves in the seconds between the call and the PIN. Every bank warns its customers. No consumer app defends the phone itself, in Hindi.</p></section>
+  <section><h2>What I built</h2><p>Six departments in one loop: spoof detection on AASIST-hindi with a three-window vote, coercion analysis over Hindi ASR and eight vector banks, threat and factcheck signals, a payment tripwire, and a tamper-evident packet for 1930 and Chakshu. The fusion ladder is deterministic: PASS, CAUTION, PAUSE, KILL. Spoof or high coercion holds the call. Both kill it.</p></section>
+  <section><h2>What proves it</h2><p>Held-out Hindi spoof accuracy is 0.9919, 123 of 124, with the single miss disclosed. False positives on real Hindi calls: 0 of 100. Mean verdict latency is about 71 ms warm on a GTX 1650. Clipped, silent or invalid audio can never PASS.</p></section>
+</main>
+<nav class="pager" aria-label="projects">
+  <a href="lunar-tie.html"><span>previous</span>LUNAR-TIE</a>
+  <a class="right" href="raasta.html"><span>next</span>RAASTA</a>
+</nav>
+</body>
+</html>

@@ -1,0 +1,229 @@
+{
+  "name": "Harsh Gounder",
+  "titleSmall": "Harsh",
+  "titleBig": "Gounder",
+  "tagline": "Engineer. Builds agent harnesses, breaks binaries, keeps receipts.",
+  "scrollCue": "scroll",
+  "about": {
+    "eyebrow": "01 / about",
+    "heading": "The short version",
+    "lede": "I am a second-year Electrical and Computer Engineering student at Manipal University Jaipur. I build agent harnesses, reverse-engineering tools, and systems that keep their own receipts.",
+    "body": [
+      "Most of my work starts with a measurement: a test suite, a coverage ledger, a fork census. If I cannot rerun it, I do not trust it.",
+      "This year: SIH 2026 with LUNAR-TIE, a competitive programming grind under the handle Liebert511, and a fleet of agents that argues with itself until one of them is right."
+    ],
+    "facts": [
+      {
+        "k": "base",
+        "v": "Manipal University Jaipur"
+      },
+      {
+        "k": "degree",
+        "v": "B.Tech, Electrical and Computer Engineering"
+      },
+      {
+        "k": "year",
+        "v": "second year, semester III"
+      }
+    ]
+  },
+  "skills": {
+    "eyebrow": "02 / skills",
+    "heading": "Three habits",
+    "lede": "Tools change. The loop does not: build it, break it, prove it.",
+    "clusters": [
+      {
+        "name": "build",
+        "color": "#c2361d",
+        "line": "Agents, harnesses, servers, the glue that keeps a fleet honest.",
+        "items": [
+          "Python",
+          "TypeScript",
+          "Node.js",
+          "MCP servers",
+          "Hermes Agent",
+          "Claude Code",
+          "Codex",
+          "LiteLLM",
+          "Docker",
+          "Linux"
+        ]
+      },
+      {
+        "name": "break",
+        "color": "#2f4a8a",
+        "line": "Binaries, browsers, firmware, the parts nobody documented.",
+        "items": [
+          "Ghidra",
+          "rizin",
+          "Frida",
+          "angr",
+          "capa",
+          "YARA",
+          "jadx",
+          "Burp Suite",
+          "nuclei"
+        ]
+      },
+      {
+        "name": "prove",
+        "color": "#1f7a5c",
+        "line": "Suites, ledgers, benchmarks, the number that survives a rerun.",
+        "items": [
+          "pytest",
+          "Playwright",
+          "Puppeteer",
+          "coverage ledgers",
+          "benchmark suites",
+          "LaTeX"
+        ]
+      }
+    ]
+  },
+  "projects": {
+    "eyebrow": "03 / projects",
+    "heading": "Six that shipped",
+    "lede": "Hackathon builds, research instruments, and one atlas that took a fork network apart.",
+    "items": [
+      {
+        "slug": "lunar-tie",
+        "name": "LUNAR-TIE",
+        "context": "SIH 2026 / SIH26166 / ISRO",
+        "year": "2026",
+        "line": "Image correspondence for Chandrayaan-2, where the sun angle, the scale and the sensor all change and the match still has to hold.",
+        "stack": "Python, OpenCV, pytest",
+        "proof": "154 of 154 tests pass on the hardened build.",
+        "repo": "https://github.com/harshgounder/lunar-tie",
+        "live": "",
+        "problem": "Chandrayaan-2 gives you three instruments at three scales: OHRC at 0.25 m/px, TMC-2 with five bands, IIRS at 80 m/px with 256 bands. Match those against LRO NAC and Kaguya under sun angles from 60 to 180 degrees. ISRO's brief asks for sub-pixel accuracy, tie points spread across the whole image, and an inlier ratio. One good crater is not a result.",
+        "built": "A Python pipeline in four stages: data ingest, matchers, geometry, eval. Every pair gets its own YAML config and every stage its own CLI entry point. Photometric normalisation runs before matching. The evaluator writes RMSE, inlier count and inlier ratio per stratum, so a result that only works on textured terrain fails the distribution check.",
+        "proofLong": "154 tests pass on the hardened M1 build, with a zero-Ch2-input guarantee for the fixtures: the suite never quietly depends on the data it is meant to process. Window 1 is the tree I own; window 2 is a separate build."
+      },
+      {
+        "slug": "kavach",
+        "name": "Kavach",
+        "context": "IIC 3.0 / Cyber security / Team 511",
+        "year": "2026",
+        "line": "A Hindi-first shield against digital-arrest and voice scams. It hears the script and the synthetic voice, then stops the payment.",
+        "stack": "Python, PyTorch, AASIST",
+        "proof": "0.9919 held-out spoof accuracy and 0 false positives on 100 real calls.",
+        "repo": "https://github.com/harshgounder/kavach",
+        "live": "",
+        "problem": "Digital-arrest scams cost 4,057.7 crore rupees across 2.97 lakh complaints from 2022 to May 2026. The money moves in the seconds between the call and the PIN. Every bank warns its customers. No consumer app defends the phone itself, in Hindi.",
+        "built": "Six departments in one loop: spoof detection on AASIST-hindi with a three-window vote, coercion analysis over Hindi ASR and eight vector banks, threat and factcheck signals, a payment tripwire, and a tamper-evident packet for 1930 and Chakshu. The fusion ladder is deterministic: PASS, CAUTION, PAUSE, KILL. Spoof or high coercion holds the call. Both kill it.",
+        "proofLong": "Held-out Hindi spoof accuracy is 0.9919, 123 of 124, with the single miss disclosed. False positives on real Hindi calls: 0 of 100. Mean verdict latency is about 71 ms warm on a GTX 1650. Clipped, silent or invalid audio can never PASS."
+      },
+      {
+        "slug": "raasta",
+        "name": "RAASTA",
+        "context": "HYPNEXIS 2026 / SC-02 / Team RISC",
+        "year": "2026",
+        "line": "Turns any Indian street photo into a per-body accessibility verdict and a route that avoids what actually stops you.",
+        "stack": "JavaScript, computer vision",
+        "proof": "Shortest route meets 33 barriers. The RAASTA route meets 0.",
+        "repo": "https://github.com/harshgounder/raasta",
+        "live": "https://harshgounder.github.io/raasta/",
+        "problem": "A route planner that assumes one body is a route planner for nobody. A 150 mm kerb, a parked cart, a broken slab: the same street is passable for one person and closed for another. Most maps answer with distance and call it done.",
+        "built": "A photo goes through twelve stages: two detectors, agreement, a footpath mask, depth, measurement, placement, impact, a vision model, a reasoner, a receipt. Seventy-four body profiles across seven categories change the cost of the same kerb. Each segment is known_barrier, known_clear with a date, osm_tag, or unknown. No recent image means unknown, never safe.",
+        "proofLong": "On the Chandigarh demo the shortest route is 622 m and meets 33 placed barriers. The RAASTA route is 1.04 km and meets none. A full scan runs in about 26 seconds on a 4 GB laptop GPU; the detectors alone take about 6."
+      },
+      {
+        "slug": "vakya",
+        "name": "VAKYA",
+        "context": "HYPNEXIS 2026 / Team RISC",
+        "year": "2026",
+        "line": "A five-dollar device that hears Indian speech and performs a verified action, offline. The grammar is the instruction set.",
+        "stack": "Python, grammar-constrained decoding",
+        "proof": "A garbled utterance can produce a valid action or a refusal, never a wrong one.",
+        "repo": "https://github.com/harshgounder/vakya",
+        "live": "",
+        "problem": "Voice agents fail at the first turn. 55 percent of 455 teams abandoned theirs, and open-vocabulary speech recognition errs by 50 percent or more on Indian field speech. The failure lives between what was heard and what was executed.",
+        "built": "Move the constraint from the model to the decoder. A byte-level grammar compiled from the target's own schema constrains every decoded token, so the action is well-formed by construction in any script. The grammar also carries date formats, numeral systems, currency units and enum members, which makes it the localisation layer too.",
+        "proofLong": "A garbled utterance can produce a valid action or a refusal. Guardrail, audit trail and refusal stop being promises and become architecture. The target is a five-dollar device, offline, with no task-specific weights."
+      },
+      {
+        "slug": "ai-web-arsenal",
+        "name": "AI web arsenal",
+        "context": "Attack surface inventory",
+        "year": "2026",
+        "line": "A tool manifest and coverage instrument for web platforms, built to be driven by an agent and checked by a human.",
+        "stack": "Python, Markdown corpus",
+        "proof": "64 verified tools, 28 authored domains, 39.7 percent of a 1,000-factor denominator.",
+        "repo": "https://github.com/harshgounder/ai-web-arsenal",
+        "live": "",
+        "problem": "Tool lists lie. A folder of 300 links says nothing about what you can actually run, what it covers, and what you have never touched. Coverage gets asserted instead of measured.",
+        "built": "A manifest of 64 verified tools, 28 authored domains plus 9 pointers, and a 1,000-factor denominator across sixteen lenses. Every factor carries a coverage record. Every excluded entry carries a reason. A gate and a claims ledger keep the scoreboard honest.",
+        "proofLong": "Coverage is 39.7 percent of the denominator, against a measured ceiling of 95.0 percent, with 6 of 1,000 factors observed. The defects found in the project are listed in the repo, including the ones in its own scoring."
+      },
+      {
+        "slug": "rea-expansion",
+        "name": "REA expansion atlas",
+        "context": "Research / reverse engineering",
+        "year": "2026",
+        "line": "A gap audit of REA, the agent-first reverse-engineering tool: the fork network, the derivative projects, and the papers.",
+        "stack": "Python, GitHub API, arXiv",
+        "proof": "Every claim tagged verified or unverified, with TSVs to check it.",
+        "repo": "https://github.com/harshgounder/rea-expansion",
+        "live": "",
+        "problem": "REA is an agent-first reverse-engineering tool with a fork network large enough that who is building on it is a real research question. The first pass found 66 forks and called it a landscape.",
+        "built": "Six waves: understand the upstream from source, score the fork network, profile the competing agent-RE projects, harvest 688 specialised tools from 42 GitHub topics, read 292 papers out of a 1,084-paper harvest, then audit upstream drift. Every repo and paper ID cited by the research reports gets a live check in a TSV.",
+        "proofLong": "Claims carry a source and a verified or unverified tag. Subagent output is a claim until a review table says otherwise. The build phase waits for an explicit GO, which is the honest state of the work."
+      }
+    ]
+  },
+  "contact": {
+    "eyebrow": "04 / contact",
+    "heading": "Send the hard one",
+    "lede": "Open to internships, research collaborations, and problems nobody has measured yet.",
+    "note": "No form, no newsletter. A real inbox.",
+    "email": "harshgounder01@gmail.com",
+    "links": [
+      {
+        "label": "GitHub",
+        "value": "harshgounder",
+        "href": "https://github.com/harshgounder"
+      },
+      {
+        "label": "Codeforces",
+        "value": "Liebert511",
+        "href": "https://codeforces.com/profile/Liebert511"
+      },
+      {
+        "label": "Email",
+        "value": "harshgounder01@gmail.com",
+        "href": "mailto:harshgounder01@gmail.com"
+      }
+    ]
+  },
+  "lab": {
+    "eyebrow": "04 / lab notes",
+    "heading": "Things we measured",
+    "lede": "Work that lives on the web, in group chats and in notebooks. A demo, so the notes stay short.",
+    "notes": [
+      {
+        "tag": "model id",
+        "name": "ika",
+        "line": "A model with no name, fingerprinted from the outside.",
+        "body": "Ten hard trivia questions: ika scored 9. GPT-6.1 Sol scored 9 to 10, GPT-5.5 scored 9, gpt-oss scored 0, Inkling scored 0 to 2. Then rare words that gpt-oss garbles in 26 of 26 runs. ika copied 3 of 4, like GPT-5.5 and GPT-6. Its tokenizer mistakes match neither. Best guess: an unreleased OpenAI model. Not confirmed."
+      },
+      {
+        "tag": "objective",
+        "name": "NCMS",
+        "line": "Next-Concept Modeling, read down to the substep.",
+        "body": "Generate a hierarchy of discrete codes coarse to fine, all codes in a level in parallel. The published claim is 10 to 31 times faster than the strongest diffusion language models with 4 to 5 times fewer training tokens. Three weeks old when we picked it up. The open question is the ablation nobody published."
+      },
+      {
+        "tag": "precision",
+        "name": "bonsai",
+        "line": "Small ternary models, compressed until the table is the model.",
+        "body": "A frozen 16 MB vocabulary and a body compressed to ternary: 46 MB total, 615 to 740 tokens per second on a laptop CPU, 5 to 6 times faster than 8-bit GGUF at one seventh of the memory. Zeros run up to 51.5 percent of weights and the kernels ignore that."
+      },
+      {
+        "tag": "optimizer",
+        "name": "muon",
+        "line": "Fewer tokens to the same loss. Not yet fewer seconds.",
+        "body": "Muon is the frontier default now, and the honest paired study says it wins every equal-data test while AdamW still wins language wall-clock, because the optimizer call is over half the step. NorMuon reports 21.7 percent fewer steps than AdamW at 1.1B. We are chasing the wall-clock gap, not the headline."
+      }
+    ]
+  }
+}

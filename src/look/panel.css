@@ -1,0 +1,79 @@
+/* HTML layer of the comic panel: it owns layout and text, the GL pass draws the ink (look/panel.js) */
+@font-face { font-family: 'Rounded'; src: url('/fonts/MPLUSRounded1c-ExtraBold.latin.woff2') format('woff2'); font-weight: 800; font-display: block; }
+@font-face { font-family: 'Rounded'; src: url('/fonts/MPLUSRounded1c-Bold.latin.woff2') format('woff2'); font-weight: 700; font-display: block; }
+
+.comic { position: fixed; inset: 0; pointer-events: none; overflow: hidden; font-family: 'Rounded', system-ui, sans-serif; color: #151515; }
+.comic .panel { position: absolute; inset: 84px 48px 48px 48px; }
+.comic .caption { position: absolute; max-width: 30ch; padding: 14px 18px; font-weight: 800; font-size: 13px; line-height: 1.45; letter-spacing: 0.04em; text-transform: uppercase; }
+.comic .caption.tl { top: 112px; left: 80px; }
+.comic .caption.br { bottom: 80px; right: 80px; }
+.comic .pill { position: absolute; top: 22px; right: 48px; display: flex; gap: 28px; padding: 12px 22px; font-weight: 800; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; }
+.comic .badge { position: absolute; width: 0; height: 0; font-weight: 800; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.comic .badge span { position: absolute; transform: translate(-50%, -50%); white-space: nowrap; }
+@media (max-width: 640px) {
+  .comic .panel { inset: 72px 16px 16px 16px; }
+  .comic .caption.tl { top: 92px; left: 32px; } .comic .caption.br { bottom: 32px; right: 32px; }
+  .comic .pill { right: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .comic { --boil: 0; } }
+
+/* story: each beat is a full-screen layer that the story module slides (translateY) */
+.comic .beat { position: absolute; inset: 0; will-change: transform; }
+.story-spacer { z-index: -1; }
+/* inset close-ups inside a beat (story.js positions them, GL draws them as panels) */
+.comic .inset { position: absolute; width: 22vw; aspect-ratio: 4 / 3; visibility: hidden; }
+.comic .inset.a { left: 7vw; top: 34vh; }
+.comic .inset.b { right: 6vw; top: 30vh; }
+@media (max-width: 640px) { .comic .inset { width: 40vw; } .comic .inset.a { left: 6vw; top: 52vh; } .comic .inset.b { right: 5vw; top: 22vh; } }
+/* age gate: night plate drawn by GL behind it (story.js), HTML on top for keyboard + screen readers */
+.agegate { font-family: 'Rounded', system-ui, sans-serif; position: fixed; inset: 0; display: grid; place-content: center; justify-items: center; gap: 40px; pointer-events: auto; color: #f3f3f3; text-align: center; }
+.agegate[hidden] { display: none; }
+.agegate-title { margin: 0; font-weight: 800; font-size: clamp(32px, 7vw, 88px); line-height: 0.95; text-transform: uppercase; letter-spacing: 0.02em; max-width: 12ch; }
+.agegate-actions, .agegate-dob fieldset { display: flex; gap: 40px; border: 0; padding: 0; margin: 0; }
+.agegate-dob { display: grid; justify-items: center; gap: 28px; }
+.agegate-dob legend { margin-bottom: 18px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+.agegate-dob label { display: grid; gap: 6px; font-weight: 700; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; }
+.agegate .box { font: 800 15px/1 'Rounded', system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: #151515; background: transparent; border: 0; padding: 16px 28px; cursor: pointer; text-align: center; }
+.agegate input.box { width: 3.2em; padding: 14px 10px; outline: none; }
+.agegate input.box[name="y"] { width: 5em; }
+.agegate .box:focus-visible { outline: 3px solid #f3f3f3; outline-offset: 6px; }
+.agegate-denied { margin: 0; font-weight: 700; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+
+/* sound toggle (audio/audio.js): first in tab order, top left, a plain boxed label in the comic type */
+.sound-toggle { position: fixed; top: 22px; left: 48px; z-index: 30; padding: 12px 18px; border: 0; background: transparent;
+  color: #111; font: 800 12px/1 'Rounded', system-ui, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; }
+.sound-toggle:focus-visible { outline: 3px solid #ab1d18; outline-offset: 3px; }
+@media (max-width: 640px) { .sound-toggle { left: 16px; } }
+/* karaoke (audio/storysound.js): a word's --k rises 0..1 around its spoken time; ink -> accent */
+.comic .caption .w { color: color-mix(in srgb, #ab1d18 calc(var(--k, 0) * 100%), currentColor); }
+
+/* hold beat (interaction/hold.js): captions marked .after wait for the hold to finish; the hold button is a real
+   button for keyboard and touch, drawn with the GL rough box like the pill */
+.comic .caption.after { visibility: hidden; }
+.comic .caption.after.shown { visibility: inherit; }
+.hold-btn { position: fixed; left: 50%; bottom: 40px; transform: translateX(-50%); z-index: 30; padding: 12px 20px; border: 0; background: transparent;
+  color: #111; font: 800 12px/1 'Rounded', system-ui, sans-serif; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; touch-action: none; user-select: none; -webkit-user-select: none; }
+.hold-btn:focus-visible { outline: 3px solid #ab1d18; outline-offset: 3px; }
+.hold-btn[hidden] { display: none; }
+
+/* display titles (look/titlesheet.js paints the letters in GL; the HTML text is transparent but real) */
+@font-face { font-family: 'Display'; src: url('/fonts/Gloock-Regular.latin.woff2') format('woff2'); font-weight: 400; font-display: block; }
+.comic .title { position: absolute; left: 0; right: 0; top: 108px; margin: 0; text-align: center; color: transparent; font-family: 'Display', serif;
+  font-weight: 400; text-transform: uppercase; line-height: 0.92; letter-spacing: -0.01em; }
+.comic .title span { display: block; width: max-content; margin: 0 auto; }
+.comic .title .t-small { font-size: clamp(24px, 4.2vw, 60px); }
+.comic .title .t-big { font-size: clamp(56px, 12.5vw, 190px); }
+.comic .title ::selection { background: #ab1d18; color: transparent; }
+
+/* carousel (look/carousel.js): real buttons + a title whose letters slide in with a stagger; GL draws the ink boxes */
+.comic .carousel { position: absolute; left: 50%; bottom: 72px; transform: translateX(-50%); display: flex; align-items: center; gap: 28px;
+  pointer-events: auto; touch-action: pan-y; }
+.carousel button { width: 46px; height: 46px; border: 0; background: transparent; color: #111; font: 800 18px/1 'Rounded', system-ui, sans-serif; cursor: pointer; }
+.carousel button:focus-visible, .carousel:focus-visible { outline: 3px solid #ab1d18; outline-offset: 3px; }
+.carousel .car-title { margin: 0; min-width: 14ch; text-align: center; font: 800 15px/1.2 'Rounded', system-ui, sans-serif; letter-spacing: 0.08em; text-transform: uppercase; color: #111; }
+.carousel .car-title span { display: inline-block; }
+.carousel .car-title.in span { animation: car-letter 0.5s cubic-bezier(0.16, 1, 0.3, 1) both; animation-delay: calc(var(--i) * 28ms); }
+@keyframes car-letter { from { opacity: 0; transform: translateX(calc(var(--d, 1) * 28px)); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .carousel .car-title.in span { animation: none; } }
+@media (max-width: 640px) { .comic .carousel { bottom: 40px; gap: 12px; } }

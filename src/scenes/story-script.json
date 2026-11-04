@@ -1,0 +1,30 @@
+{
+  "title": "The mapmaker",
+  "beats": {
+    "fog": [
+      "A lone mapmaker walks out into the fog.",
+      "Every line she draws is a road someone will take."
+    ],
+    "night": [
+      "Then the fog closes."
+    ],
+    "red": [
+      "She keeps walking, because the map is not finished."
+    ],
+    "crumble": [
+      "Behind her, the old roads crumble."
+    ],
+    "inks": [
+      "She chooses her ink."
+    ],
+    "map": [
+      "She stops to draw the last roads.",
+      "Now the map is finished."
+    ]
+  },
+  "after": {
+    "map": [
+      2
+    ]
+  }
+}
