@@ -51,7 +51,7 @@ canvas { display: block; position: fixed; inset: 0; }
 /* title */
 .comic .beat .title { top: clamp(96px, 16vh, 190px); }
 .comic .tagline {
-  position: absolute; left: 0; right: 0; top: 62%;
+  position: absolute; left: 0; right: 0; top: 58%;
   margin: 0 auto; max-width: 30ch; text-align: center;
   font-family: 'Read', Georgia, serif; font-size: clamp(16px, 1.5vw, 20px); line-height: 1.4; color: var(--paper);
 }

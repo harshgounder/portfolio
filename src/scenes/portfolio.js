@@ -201,7 +201,7 @@ export async function create(ctx) {
         if (!b.visible) continue
         aim(b.cam(b.progress))
         const p = b.look(params, b.progress)
-        p.trail = trailTex
+        p.trail = b.id === 'title' ? null : trailTex
         const panelEl = b.el.querySelector('.panel')
         const rect = panelEl.getBoundingClientRect()
         const boxes = (b.boxes?.() ?? []).slice(0, 6)
