@@ -1,0 +1,1 @@
+export{t as INKS,n as create,r as createInkRow,i as params,a as ranges}from"./inks-CUhFJuEa.js";

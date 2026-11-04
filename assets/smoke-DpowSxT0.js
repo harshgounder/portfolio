@@ -1,0 +1,1 @@
+import{Kr as e,S as t,Zt as n,kr as r,rn as i}from"./three.core-Di7UvO4-.js";var a={speed:.4,background:`#f3f3f3`};function o(){let o=new r,s=new n(new e(1,.32,200,32),new i);return o.add(s),{scene:o,update(e){o.background=new t(a.background),s.rotation.set(e*a.speed,e*a.speed*.7,0)}}}export{o as create,a as params};

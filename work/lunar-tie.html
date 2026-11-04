@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUNAR-TIE · Harsh Gounder</title>
+<meta name="description" content="Image correspondence for Chandrayaan-2, where the sun angle, the scale and the sensor all change and the match still has to hold.">
+  <link rel="stylesheet" crossorigin href="/portfolio/assets/case-DLj_wBXZ.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="back" href="../index.html">Harsh Gounder</a>
+  <span class="kind">case study</span>
+</header>
+<main id="main">
+  <p class="eyebrow">SIH 2026 / SIH26166 / ISRO · 2026</p>
+  <h1>LUNAR-TIE</h1>
+  <p class="line">Image correspondence for Chandrayaan-2, where the sun angle, the scale and the sensor all change and the match still has to hold.</p>
+  <div class="plate" aria-hidden="true"><span>01</span></div>
+  <dl class="meta">
+    <div><dt>stack</dt><dd>Python, OpenCV, pytest</dd></div>
+    <div><dt>proof</dt><dd>154 of 154 tests pass on the hardened build.</dd></div>
+    <div><dt>code</dt><dd><a href="https://github.com/harshgounder/lunar-tie">harshgounder/lunar-tie</a></dd></div>
+    
+  </dl>
+  <section><h2>The problem</h2><p>Chandrayaan-2 gives you three instruments at three scales: OHRC at 0.25 m/px, TMC-2 with five bands, IIRS at 80 m/px with 256 bands. Match those against LRO NAC and Kaguya under sun angles from 60 to 180 degrees. ISRO's brief asks for sub-pixel accuracy, tie points spread across the whole image, and an inlier ratio. One good crater is not a result.</p></section>
+  <section><h2>What I built</h2><p>A Python pipeline in four stages: data ingest, matchers, geometry, eval. Every pair gets its own YAML config and every stage its own CLI entry point. Photometric normalisation runs before matching. The evaluator writes RMSE, inlier count and inlier ratio per stratum, so a result that only works on textured terrain fails the distribution check.</p></section>
+  <section><h2>What proves it</h2><p>154 tests pass on the hardened M1 build, with a zero-Ch2-input guarantee for the fixtures: the suite never quietly depends on the data it is meant to process. Window 1 is the tree I own; window 2 is a separate build.</p></section>
+</main>
+<nav class="pager" aria-label="projects">
+  <a href="rea-expansion.html"><span>previous</span>REA expansion atlas</a>
+  <a class="right" href="kavach.html"><span>next</span>Kavach</a>
+</nav>
+</body>
+</html>

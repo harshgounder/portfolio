@@ -1,0 +1,1 @@
+var e=new URLSearchParams(location.search),t={scene:e.get(`scene`),backend:e.get(`backend`)??`webgl`,panel:e.has(`panel`),preset:e.get(`preset`),dpr:Number(e.get(`dpr`))||Math.min(devicePixelRatio,2),t:e.has(`t`)?Number(e.get(`t`)):null,gate:e.get(`gate`),tier:e.get(`tier`)??(e.has(`dpr`)?`off`:`auto`)};export{t};

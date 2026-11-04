@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RAASTA · Harsh Gounder</title>
+<meta name="description" content="Turns any Indian street photo into a per-body accessibility verdict and a route that avoids what actually stops you.">
+  <link rel="stylesheet" crossorigin href="/portfolio/assets/case-DLj_wBXZ.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="bar">
+  <a class="back" href="../index.html">Harsh Gounder</a>
+  <span class="kind">case study</span>
+</header>
+<main id="main">
+  <p class="eyebrow">HYPNEXIS 2026 / SC-02 / Team RISC · 2026</p>
+  <h1>RAASTA</h1>
+  <p class="line">Turns any Indian street photo into a per-body accessibility verdict and a route that avoids what actually stops you.</p>
+  <div class="plate" aria-hidden="true"><span>03</span></div>
+  <dl class="meta">
+    <div><dt>stack</dt><dd>JavaScript, computer vision</dd></div>
+    <div><dt>proof</dt><dd>Shortest route meets 33 barriers. The RAASTA route meets 0.</dd></div>
+    <div><dt>code</dt><dd><a href="https://github.com/harshgounder/raasta">harshgounder/raasta</a></dd></div>
+    <div><dt>live</dt><dd><a href="https://harshgounder.github.io/raasta/">harshgounder.github.io/raasta/</a></dd></div>
+  </dl>
+  <section><h2>The problem</h2><p>A route planner that assumes one body is a route planner for nobody. A 150 mm kerb, a parked cart, a broken slab: the same street is passable for one person and closed for another. Most maps answer with distance and call it done.</p></section>
+  <section><h2>What I built</h2><p>A photo goes through twelve stages: two detectors, agreement, a footpath mask, depth, measurement, placement, impact, a vision model, a reasoner, a receipt. Seventy-four body profiles across seven categories change the cost of the same kerb. Each segment is known_barrier, known_clear with a date, osm_tag, or unknown. No recent image means unknown, never safe.</p></section>
+  <section><h2>What proves it</h2><p>On the Chandigarh demo the shortest route is 622 m and meets 33 placed barriers. The RAASTA route is 1.04 km and meets none. A full scan runs in about 26 seconds on a 4 GB laptop GPU; the detectors alone take about 6.</p></section>
+</main>
+<nav class="pager" aria-label="projects">
+  <a href="kavach.html"><span>previous</span>Kavach</a>
+  <a class="right" href="vakya.html"><span>next</span>VAKYA</a>
+</nav>
+</body>
+</html>
