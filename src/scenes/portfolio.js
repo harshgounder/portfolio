@@ -25,8 +25,8 @@ const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&l
 const beats = [
   {
     id: 'title', screens: 1.2, full: true, title: true,
-    look: (p) => ({ ...p, sky: '#262626', env: false, figure: false, horizon: 1.2, fogAmp: 0, fogPeak: 0, billow: 0,
-      ground: { type: 'grain', amount: 0.2, seed: 3 }, panelStroke: 5 }),
+    look: (p) => ({ ...p, sky: p.ink, env: false, figure: false, fogAmp: 0, fogPeak: 0, billow: 0,
+      ground: { type: 'gouge', amount: 1, tone: 3, seed: 3 }, panelStroke: 5 }),
     cam: (k) => [0, 1.0, 3.9, 0.9],
   },
   {
